@@ -1,4 +1,20 @@
 {
+  "CF124914956": {
+    "contest_id": 677,
+    "language": "GNU C++14",
+    "path": "codeforces\\677\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Vanya and Fence",
+    "problem_url": "https://codeforces.com/contest/677/problem/A",
+    "submission_id": "CF124914956",
+    "submission_url": "https://codeforces.com/contest/677/submission/124914956",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Aug/05/2021 09:18"
+  },
   "CF124923695": {
     "contest_id": 365,
     "language": "GNU C++14",
