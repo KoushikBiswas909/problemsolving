@@ -1,4 +1,20 @@
 {
+  "CF124923695": {
+    "contest_id": 365,
+    "language": "GNU C++14",
+    "path": "codeforces\\365\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Good Number",
+    "problem_url": "https://codeforces.com/contest/365/problem/A",
+    "submission_id": "CF124923695",
+    "submission_url": "https://codeforces.com/contest/365/submission/124923695",
+    "tags": [
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "Aug/05/2021 11:41"
+  },
   "CF124925948": {
     "contest_id": 365,
     "language": "GNU C++14",
