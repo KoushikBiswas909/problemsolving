@@ -1,48 +1,86 @@
-#include<bits/stdc++.h>
-#define ll long long
-#define ull unsigned long long
-ll mod=1000000007;
-using namespace std;
-ll gcd(ll a, ll b)
+#include <bits/stdc++.h>
+#define rep(i, x, y) for (register int i = (x); i <= (y); i++)
+#define down(i, x, y) for (register int i = (x); i >= (y); i--)
+
+inline int read()
 {
-if (b == 0)
-return a;
-return gcd(b, a % b);
+    int x = 0, f = 1;
+    char ch = getchar();
+    while (ch < '0' || ch > '9')
+    {
+        if (ch == '-')
+            f = -1;
+        ch = getchar();
+    }
+    while (ch >= '0' && ch <= '9')
+    {
+        x = x * 10 + ch - '0';
+        ch = getchar();
+    }
+    return x * f;
 }
-void solve()
+
+//B is 1 , R is -1.
+int main(int argc, char const *argv[])
 {
-    ll n;cin>>n;
-    string s;cin>>s;
-    queue<ll> q;
-    for(int i=0;i<n;i++){
-        if(s[i]!='?') q.push(i);
-    }
-    if(q.size()==0){
-        s[0]='B';q.push(0);
-    }
-    while(!q.empty()){
-        auto tp=q.front();q.pop();
-        if(tp>0 && s[tp-1]=='?'){
-            if(s[tp]=='R') s[tp-1]='B';
-            else s[tp-1]='R';
-            q.push(tp-1);
+    int t = read();
+    while (t--)
+    {
+        std::queue<int> q;
+        int n = read();
+        char s[105];
+        int vis[105];
+        memset(vis, 0, sizeof(vis));
+        scanf("%s", s + 1);
+        rep(i, 1, n)
+        {
+            if (s[i] != '?')
+            {
+                vis[i] = (s[i] == 'B' ? 1 : -1);
+                q.push(i);
+            }
         }
-         if(tp<n-1 && s[tp+1]=='?'){
-            if(s[tp]=='R') s[tp+1]='B';
-            else s[tp+1]='R';
-            q.push(tp+1);
+        while (!q.empty())
+        {
+            int pos = q.front();
+            q.pop();
+            if (vis[pos] == 1)
+            {
+                if (!vis[pos + 1] && pos + 1 <= n)
+                {
+                    vis[pos + 1] = -1;
+                    q.push(pos + 1);
+                }
+                if (!vis[pos - 1] && pos - 1 > 0)
+                {
+                    vis[pos - 1] = -1;
+                    q.push(pos - 1);
+                }
+            }
+            else if (vis[pos] == -1)
+            {
+                if (!vis[pos + 1] && pos + 1 <= n)
+                {
+                    vis[pos + 1] = 1;
+                    q.push(pos + 1);
+                }
+                if (!vis[pos - 1] && pos - 1 > 0)
+                {
+                    vis[pos - 1] = 1;
+                    q.push(pos - 1);
+                }
+            }
         }
+        int a = 1, b = -1;
+        rep(i, 1, n) if (!vis[i]) vis[i] = a, std::swap(a, b);
+        rep(i, 1, n)
+        {
+            if (vis[i] == 1)
+                putchar('B');
+            else if (vis[i] == -1)
+                putchar('R');
+        }
+        puts("");
     }
-    cout<<s<<endl;
-}
-int main()
-{
-ios_base::sync_with_stdio(false);
-cin.tie(0);cout.tie(0);
-int t=1;cin>>t;
-while(t--)
-{
-solve();
-}
-return 0;
+    return 0;
 }
