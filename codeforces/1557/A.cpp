@@ -1,7 +1,3 @@
-// https://www.geeksforgeeks.org/iomanip-setprecision-function-in-c-with-examples/
-// https://www.geeksforgeeks.org/precision-of-floating-point-numbers-in-c-floor-ceil-trunc-round-and-setprecision/
-
-
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
