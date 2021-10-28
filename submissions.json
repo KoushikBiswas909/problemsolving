@@ -829,5 +829,22 @@
       "*1100"
     ],
     "timestamp": "Oct/23/2021 14:33"
+  },
+  "CF133303330": {
+    "contest_id": 158,
+    "language": "GNU C++17",
+    "path": "codeforces\\158\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Next Round",
+    "problem_url": "https://codeforces.com/contest/158/problem/A",
+    "submission_id": "CF133303330",
+    "submission_url": "https://codeforces.com/contest/158/submission/133303330",
+    "tags": [
+      "*special problem",
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Oct/28/2021 09:36"
   }
 }
